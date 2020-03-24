@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/ionic.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#insert").click(function() {
+                var name = $("#name").val();
+                var steps = $("#steps").val();
+                var date = $("#date").val();
+                var dataString = "&name=" + name + "&steps=" + steps + "&date=" + date;
+                if ($.trim(name).length > 0 & $.trim(steps).length > 0 & $.trim(date).length > 0) {
+                    $.ajax({
+                        type: "POST",
+                        url: "http://192.168.1.32/phonegap/database/insert.php",
+                        data: dataString,
+                        crossDomain: true,
+                        cache: false,
+                        beforeSend: function() {
+                            $("#insert").val('Connecting...');
+                        },
+                        success: function(data) {
+                            if (data == "success") {
+                                alert("inserted");
+                                $("#insert").val('submit');
+                            } else if (data == "error") {
+                                alert("error");
+                            }
+                        }
+                    });
+                }
+                return false;
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="bar bar-header bar-positive" style="margin-bottom:80px; ">
+        <h1 class="title">Insert Database</h1>
+        <a class="button button-clear" href="readjson.html">Read JSON</a>
+    </div><br /><br />
+    <div class="list">
+        <div class="item">
+            <label>Name</label>
+            <input type="text" id="name" value="" />
+        </div>
+        <div class="item">
+            <label>steps</label>
+            <input type="text" id="steps" value="" />
+        </div>
+        <div class="item">
+            <label>date</label>
+            <input type="text" id="date" value="" />
+        </div>
+        <div class="item">
+            <input type="button" id="insert" class="button button-block" value="Insert" />
+        </div>
+    </div>
+</body>
+
+</html>
