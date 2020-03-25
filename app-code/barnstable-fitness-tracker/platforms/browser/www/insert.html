@@ -9,7 +9,7 @@
                 var name = $("#name").val();
                 var steps = $("#steps").val();
                 var date = $("#date").val();
-                var dataString = "&name=" + name + "&steps=" + steps + "&date=" + date;
+                var dataString = "&name=" + name + "&steps=" + steps + "&date=" + date + + "&insert=";
                 if ($.trim(name).length > 0 & $.trim(steps).length > 0 & $.trim(date).length > 0) {
                     $.ajax({
                         type: "POST",
@@ -20,15 +20,12 @@
                         beforeSend: function() {
                             $("#insert").val('Connecting...');
                         },
-                        success: function(data) {
-                            if (data == "success") {
-                                alert("inserted");
-                                $("#insert").val('submit');
-                            } else if (data == "error") {
-                                alert("error");
-                            }
-                        }
-                    });
+                      success: function(result) { //we got the response
+                          alert('Successfully called');
+                      },
+                      error: function(jqxhr, status, exception) {
+                          alert('Exception:', exception);
+                    }});
                 }
                 return false;
             });
