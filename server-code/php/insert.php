@@ -5,10 +5,9 @@ include "db.php";
     $name=$_POST['name'];
     $steps=$_POST['steps'];
     $date=$_POST['date'];
-    $q=mysqli_query($con,"INSERT INTO `main_data` ( `name` , `steps` , `date` ) VALUES ('$name','$steps','$date')");
-    if($q)
-    echo "success";
-    else
-    echo "error";
-    }
+    $query=mysqli_query($con,"INSERT INTO `main_data` ( `name` , `steps` , `date` ) VALUES (?,?,?)");
+    //$query=mysqli_query($con,"INSERT INTO `main_data` ( `name` , `steps` , `date` ) VALUES ('$name','$steps','$date')");
+    $stmt = mysqli_prepare($sql);
+    $stmt->bind_param("sss", $name, $steps, $date);
+    $stmt->execute();
 ?>
