@@ -1,4 +1,5 @@
 <?php
+include 'db.php';
 // This function will run within each post array including multi-dimensional arrays
 function ExtendedAddslash(&$params)
 {
@@ -15,15 +16,6 @@ ExtendedAddslash($_POST);
 $name =$_POST['name'];
 $steps =$_POST['steps'];
 $date =$_POST['date'];
-
-$db_host = 'localhost';
-$db_username = 'webapp';
-$db_password = '@Tit1000';
-$db_name = 'bfs_fitness_info';
-
-$con=mysqli_connect( $db_host, $db_username, $db_password) or die(mysqli_error());
-mysqli_select_db($con, $db_name);
-
 
 mysqli_query($con, "INSERT INTO `main_data` (name, steps, date) VALUES ('$name', '$steps', '$date') ") or die(mysqli_error($con));
 

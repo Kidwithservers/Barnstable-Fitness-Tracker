@@ -9,7 +9,7 @@
                 var name = $("#name").val();
                 var steps = $("#steps").val();
                 var date = $("#date").val();
-                var dataString = "&name=" + name + "&steps=" + steps + "&date=" + date + + "&insert=";
+                var dataString = "&name=" + name + "&steps=" + steps + "&date=" + date + "&insert=";
                 if ($.trim(name).length > 0 & $.trim(steps).length > 0 & $.trim(date).length > 0) {
                     $.ajax({
                         type: "POST",
