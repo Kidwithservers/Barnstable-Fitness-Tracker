@@ -17,7 +17,12 @@ $name =$_POST['name'];
 $steps =$_POST['steps'];
 $date =$_POST['date'];
 
-mysqli_query($con, "INSERT INTO `main_data` (name, steps, date) VALUES ('$name', '$steps', '$date') ") or die(mysqli_error($con));
+$query = $con->prepare("INSERT INTO `main_data` (name, steps, date) VALUES (?, ?, ?)");
+$query->bind_param("sss", $name, $steps, $date);
+$query->execute();
+$query->close();
+
+//mysqli_query($con, "INSERT INTO `main_data` (name, steps, date) VALUES ('$name', '$steps', '$date') ") or die(mysqli_error($con));
 
 
 ?>
