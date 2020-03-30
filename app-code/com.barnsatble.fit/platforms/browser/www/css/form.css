@@ -1,0 +1,60 @@
+@charset "utf-8";
+/* CSS Document */
+	#account {
+	padding-top: 5px;
+    width: 33%;
+    float: left;
+}
+	#leaderboard-text {
+    padding-top: 5px;
+    width: 33%;
+    float: left;
+}
+	#menu {
+    height: 5%;
+    background-color: #DB883D;
+    width: 100%;
+	overflow:auto;
+}
+	#header {
+    height: 5%;
+    background-color: #DB883D;
+    width: 100%;
+    text-align: center;
+}
+	 #form {
+    padding-top: 5px;
+    float: left;
+    width: 33%;
+}
+	#h1 {
+    font-family: triplex-sans, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 255%;
+    color: #FFFFFF;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+}
+
+.mdc-drawer-app-content {
+  flex: auto;
+  overflow: auto;
+  position: relative;
+}
+
+.main-content {
+  overflow: auto;
+  height: 100%;
+}
+
+.app-bar {
+  position: absolute;
+}
+#textfeild {
+    margin-top: 4%;
+
+}

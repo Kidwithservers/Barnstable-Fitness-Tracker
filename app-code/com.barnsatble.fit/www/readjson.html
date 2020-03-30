@@ -15,6 +15,11 @@
             padding: 2px 3px;
             text-align: center;
         }
+* {
+  margin: 0;
+  /** Possibly padding too **/
+  padding: 0;
+}
 #h1 {
     font-family: triplex-sans, sans-serif;
     font-weight: 300;
@@ -25,8 +30,9 @@
         th {
             font-weight:bold;
         }
-    #results-table {
+    #winers-table {
     color: #000000;
+    padding-top: 1.5%;
 }
     #results-th-1, #results-th-0, #results-th-2 {
     background-color: #DB883D;
@@ -43,6 +49,7 @@
     height: 5%;
     background-color: #DB883D;
     width: 100%;
+	overflow:auto;
 }
 	#header {
     height: 5%;
@@ -55,7 +62,20 @@
     float: left;
     width: 33%;
 }
-#leaderboard-text {
+	#leaderboard-text {
+    padding-top: 5px;
+    width: 33%;
+    float: left;
+}
+    #results-heading {
+    font-family: triplex-sans, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: #A7DBD8;
+    font-size: 226%;
+    text-align: center;
+}
+    #account {
 	padding-top: 5px;
     width: 33%;
     float: left;
@@ -66,19 +86,21 @@
 <div id="header"><h1 id="h1">BARNSTABLE ACADEMY FITNESS TRACKER</h1></div>
 	<div id="menu">
 		<div id="form" align="center"><a href="form.html"><img src="img/format-list-bulleted.png" width="42" hight="42" border="0" alt="form"></a></div>
-		<div id="leaderboard-text" align="center"><img src="img/format-list-numbered.png" width="42" hight="42" border="0" alt="leaderboard"></div>
-		<div id="account" align="center"><img src="img/account.png" width="42" hight="42" border="0" alt="leaderboard"></div>
-	
+		<div id="leaderboard-text" align="center"><a href="readjson.html"><img src="img/format-list-numbered.png" width="42" hight="42" border="0" alt="leaderboard"></a></div>
+		<div id="account" align="center"><a href="account.html"><img src="img/account.png" width="42" hight="42" border="0" alt="leaderboard"></a></div>
 	</div>
-	<div id="winers-table">
-    <p id="showData"></p>
+	<div id="winers-table" align="center">
+		<div align="center">
+		<h2 id="results-heading">Weekly Leaderboard</h2>
+    	<p id="showData">No One has submitted their steps this week. You can be the first!</p>
+		</div>
 	</div>
 
 
 <script>
     function CreateTableFromJSON() {
         //get data
-        var url="http://192.168.1.32/phonegap/database/rank.php";
+        var url="http://fit-track.octs.tech/phonegap/database/rank.php";
         $.getJSON(url, function(data){
         console.log(data);
         // EXTRACT VALUE FOR HTML HEADER.
