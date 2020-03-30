@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="js/jquery.js"></script>
+	<link rel="stylesheet" href="https://use.typekit.net/tip6mfg.css">
+    <title>Barnstable Academy Fitness Tracker</title>
+    <style>
+        th, td, p, input {
+            font:14px Verdana;
+        }
+        table, th, td
+        {
+            border: solid 1px #DDD;
+            border-collapse: collapse;
+            padding: 2px 3px;
+            text-align: center;
+        }
+* {
+  margin: 0;
+  /** Possibly padding too **/
+  padding: 0;
+}
+#h1 {
+    font-family: triplex-sans, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 255%;
+    color: #FFFFFF;
+}
+        th {
+            font-weight:bold;
+        }
+    #winers-table {
+    color: #000000;
+    padding-top: 1.5%;
+}
+    #results-th-1, #results-th-0, #results-th-2 {
+    background-color: #DB883D;
+    border-color: #000000;
+    border-width: medium;
+		}
+	#results-tr-0, #results-tr-1, #results-tr-2, #results-tr-3, #results-tr-4, #results-tr- {
+    background-color: #FFFFFF;
+    border-color: #000000;
+    border-width: ;
+    border-width: medium;
+		}
+    #menu {
+    height: 5%;
+    background-color: #DB883D;
+    width: 100%;
+	overflow:auto;
+}
+	#header {
+    height: 5%;
+    background-color: #DB883D;
+    width: 100%;
+    text-align: center;
+}
+    #form {
+    padding-top: 5px;
+    float: left;
+    width: 33%;
+}
+	#leaderboard-text {
+    padding-top: 5px;
+    width: 33%;
+    float: left;
+}
+    #results-heading {
+    font-family: triplex-sans, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: #A7DBD8;
+    font-size: 226%;
+    text-align: center;
+}
+    #account {
+	padding-top: 5px;
+    width: 33%;
+    float: left;
+}
+    </style>
+</head>
+<body onload="CreateTableFromJSON()">
+<div id="header"><h1 id="h1">BARNSTABLE ACADEMY FITNESS TRACKER</h1></div>
+	<div id="menu">
+		<div id="form" align="center"><a href="form.html"><img src="img/format-list-bulleted.png" width="42" hight="42" border="0" alt="form"></a></div>
+		<div id="leaderboard-text" align="center"><a href="readjson.html"><img src="img/format-list-numbered.png" width="42" hight="42" border="0" alt="leaderboard"></a></div>
+		<div id="account" align="center"><a href="account.html"><img src="img/account.png" width="42" hight="42" border="0" alt="leaderboard"></a></div>
+	</div>
+	<div id="winers-table" align="center">
+		<div align="center">
+		<h2 id="results-heading">Weekly Leaderboard</h2>
+    	<p id="showData">No One has submitted their steps this week. You can be the first!</p>
+		</div>
+	</div>
+
+
+<script>
+    function CreateTableFromJSON() {
+        //get data
+        var url="http://192.168.1.32/phonegap/database/rank.php";
+        $.getJSON(url, function(data){
+        console.log(data);
+        // EXTRACT VALUE FOR HTML HEADER.
+        // ('Book ID', 'Book Name', 'Category' and 'Price')
+        var col = [];
+        for (var i = 0; i < data.length; i++) {
+            for (var key in data[i]) {
+                if (col.indexOf(key) === -1) {
+                    col.push(key);
+                }
+            }
+        }
+
+        // CREATE DYNAMIC TABLE.
+        var table = document.createElement("table");
+			table.setAttribute("id", "results-table");
+
+        // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
+
+        var tr = table.insertRow(-1);                   // TABLE ROW.
+
+        for (var i = 0; i < col.length; i++) {
+            var th = document.createElement("th");      // TABLE HEADER.
+			th.setAttribute("id", "results-th-"+i);
+            th.innerHTML = col[i];
+            tr.appendChild(th);
+        }
+
+        // ADD JSON DATA TO THE TABLE AS ROWS.
+        for (var i = 0; i < data.length; i++) {
+
+            tr = table.insertRow(-1);
+
+            for (var j = 0; j < col.length; j++) {
+                var tabCell = tr.insertCell(-1);
+				tabCell.setAttribute("id", "results-tr-"+i);
+                tabCell.innerHTML = data[i][col[j]];
+            }
+        }
+
+        // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+        var divContainer = document.getElementById("showData");
+        divContainer.innerHTML = "";
+        divContainer.appendChild(table);
+    }
+  )};
+</script>
+</body>
+</html>
