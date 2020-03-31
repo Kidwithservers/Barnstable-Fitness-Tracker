@@ -25,21 +25,28 @@ while ($query->fetch()) {
 }
 $pass_vas = (password_verify($password, $hash));
     if ($pass_vas == true) {
-        $login = 0;
-    }
+      $login = 0;
+      $exec = $con->prepare("SELECT `fullname` FROM `users` WHERE `email` = ?");
+      $exec->bind_param("s", $email);
+      $exec->execute();
+
+      $exec->bind_result($name);
+      while ($exec->fetch()) {
+
+      }
+            }
     else {
-        echo "its fucked";
         $login = 1;
     }
 
     if($login == 0) {
-      echo "success";
+      echo $name;
 }
     elseif ($login == 1) {
-      echo "Incorect Password";
+      echo "1";
 }
     elseif ($login == 2) {
-      echo "Incorrect email or no account";
+      echo "2";
     }
     else {
       echo "server error";

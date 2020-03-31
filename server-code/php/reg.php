@@ -39,11 +39,11 @@ else {
 $query->close();
 $insert->close();
 if($reg == 0) {
-  echo "Account Created";
+  echo "0";
 }
 elseif ($reg == 2) {
-  echo "Account Already Exists";
+  echo "2";
 }
 elseif ($reg == 1) {
-  echo "internal server error";
+  echo "1";
 }
