@@ -1,34 +1,4 @@
-mdc.textField.MDCTextField.attachTo(document.querySelector('.username'));mdc.textField.MDCTextField.attachTo(document.querySelector('.username'));.username,
-.password {
-  display: block;
-  width: 300px;
-  margin: 20px auto;
-}.username,
-.password {
-  display: block;
-  width: 300px;
-  margin: 20px auto;
-}.username,
-.password {
-  display: block;
-  width: 300px;
-  margin: 20px auto;
-}.username,
-.password {
-  display: block;
-  width: 300px;
-  margin: 20px auto;
-}.username,
-.password {
-  display: block;
-  width: 300px;
-  margin: 20px auto;
-}.username,
-.password {
-  display: block;
-  width: 300px;
-  margin: 20px auto;
-}@charset "utf-8";
+@charset "utf-8";
 /* CSS Document */
 :root {
 	--mdc-theme-primary: #DB883D !important;
@@ -99,6 +69,12 @@ body {
   margin: 0 auto;
 }
 */
+.username,
+.password {
+  display: block;
+  width: 300px;
+  margin: 20px auto;
+}
 
 div#textfeild {
     display: block;
@@ -111,6 +87,12 @@ div#textfeild {
 	margin: 10px auto;
 }
 
+.logout {
+  display: block;
+  width: 300px;
+  height: 100px;
+  margin: 20px auto;
+}
 
 
 

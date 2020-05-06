@@ -1,5 +1,6 @@
 <?php
 include 'db.php';
+header('Access-Control-Allow-Origin: *');
 // This function will run within each post array including multi-dimensional arrays
 function ExtendedAddslash(&$params)
 {

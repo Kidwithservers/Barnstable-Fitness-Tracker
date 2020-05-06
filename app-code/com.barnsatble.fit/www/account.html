@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<!-- include other css files -->
+	<link rel="stylesheet" href="https://use.typekit.net/tip6mfg.css">
+	<link href="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/form.css">
+	<!-- include other JS files -->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="cordova.js"></script>
+	<script type="module">
+	mdc.ripple.MDCRipple.attachTo(document.querySelector('.mdc-button--raised'));
+	const list = mdc.list.MDCList.attachTo(document.querySelector('.mdc-list'));
+	list.wrapFocus = true;
+	const drawer = mdc.drawer.MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
+	const topAppBar = mdc.topAppBar.MDCTopAppBar.attachTo(document.getElementById('app-bar'));
+	topAppBar.setScrollTarget(document.getElementById('main-content'));
+	topAppBar.listen('MDCTopAppBar:nav', () => {
+  	drawer.open = !drawer.open;
+});
+	// const MDCTextField = mdc.textfield.MDCTextField.attachTo(document.querySelector('.username'));
+	</script>
+	<script>
+		function logout(){
+			var storage = window.localStorage;
+			storage.removeItem("acct");
+			window.location.href = "index.html";
+		}
+	</script>
+	<title>Barnstable Academy Fitness Tracker</title>
+	</head>
+	<body>
+	<aside class="mdc-drawer mdc-drawer--dismissible">  
+      <div class="mdc-drawer__content">
+        <nav class="mdc-list">
+          <a class="mdc-list-item" href="form.html" aria-selected="true">
+            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">post_add</i>
+            <span class="mdc-list-item__text">Submit Steps</span>
+          </a>
+          <a class="mdc-list-item" href="readjson.html">
+            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">format_list_numbered</i>
+            <span class="mdc-list-item__text">Leaderboard</span>
+          </a>
+          <a class="mdc-list-item mdc-list-item--activated" href="account.html">
+            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">account_circle</i>
+            <span class="mdc-list-item__text">Account</span>
+          </a>
+        </nav>
+      </div>
+    </aside>
+    <div class="mdc-drawer-app-content">
+    <header class="mdc-top-app-bar app-bar" id="app-bar">
+      <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+          <a href="#" class="demo-menu material-icons mdc-top-app-bar__navigation-icon">menu</a>
+          <span class="mdc-top-app-bar__title">Barnstable Fitness Tracker</span>
+        </section>
+      </div>
+    </header>
+
+    <main class="main-content" id="main-content">
+		
+      <div class="mdc-top-app-bar--fixed-adjust">
+		<button class="mdc-button mdc-button--raised logout" onclick="logout()">
+	<div class="mdc-button__ripple"></div>
+	<span class="mdc-button__label">
+		Logout
+	</span>
+</button>  
+	<button class="mdc-button mdc-button--raised logout" onclick="window.location.href = 'https://www.privacypolicygenerator.info/live.php?token=chusArvFR782rHGz2tqFGC4htZcWkHsz';">
+	<div class="mdc-button__ripple"></div>
+	<span class="mdc-button__label">
+		Privacy Policy
+	</span>
+</button> 
+      </div>
+    </main>
+  </div>
+</body>
+</html>

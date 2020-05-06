@@ -19,7 +19,7 @@
 	var name= $.trim($("#name-input").val());
     var password= $.trim($("#password-input").val());
     var loginString ="email="+email+"&password="+password+"&name="+name+"&register=";
-	var url = "http://fit-track.octs.tech/phonegap/database/reg.php";
+	var url = "https://fit-track.octs.tech/phonegap/database/reg.php";
     $.ajax({
         type: "POST",crossDomain: true, cache: false,
         url: url,

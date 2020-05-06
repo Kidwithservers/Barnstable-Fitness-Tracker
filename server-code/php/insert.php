@@ -44,11 +44,20 @@ if($image["image"]){
     }
 }
 
-
 $img_url = "<img src='https://fit-track.octs.tech/phonegap/database/images/" . $img_id . "' alt='verification image' width='75' hight='75' border='0'>" ;
 
+$dupe = $con->prepare("SELECT * FROM `main_data` WHERE `name` = ? AND `date` = ?");
+$dupe->bind_param("ss", $name, $date);
+$dupe->execute();
+$dupe->store_result();
+if($dupe->num_rows > 0) {
+      echo "dupicate error";
+}
+else {
 $query = $con->prepare("INSERT INTO `main_data` (name, steps, date, Image_URL) VALUES (?, ?, ?, ?)");
 $query->bind_param("ssss", $name, $steps, $date, $img_url);
 $query->execute();
 $query->close();
+}
+
 ?>
