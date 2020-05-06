@@ -1,38 +1,16 @@
 @charset "utf-8";
 /* CSS Document */
-	#account {
-	padding-top: 5px;
-    width: 33%;
-    float: left;
+:root {
+	--mdc-theme-primary: #DB883D !important;
+	--mdc-theme--on-primary: #ffffff;
+	--mdc-theme-secondary: #000000;
 }
-	#leaderboard-text {
-    padding-top: 5px;
-    width: 33%;
-    float: left;
-}
-	#menu {
-    height: 5%;
-    background-color: #DB883D;
-    width: 100%;
-	overflow:auto;
-}
-	#header {
-    height: 5%;
-    background-color: #DB883D;
-    width: 100%;
-    text-align: center;
-}
-	 #form {
-    padding-top: 5px;
-    float: left;
-    width: 33%;
-}
-	#h1 {
-    font-family: triplex-sans, sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    font-size: 255%;
-    color: #FFFFFF;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
 
 body {
@@ -49,12 +27,73 @@ body {
 .main-content {
   overflow: auto;
   height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .app-bar {
   position: absolute;
 }
+/*
 #textfeild {
     margin-top: 4%;
 
 }
+*/
+#header-title {
+    font-size: large;
+}
+.mdl-grid.center-items {
+  justify-content: center;
+}
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 300px;
+  margin: auto;
+}
+
+.button-container button {
+  margin: 3px;
+}
+
+#label {
+	color: #DB883D;
+	
+}
+/*
+.steps_div{
+  display: block;
+  width: 250px;
+  margin: 0 auto;
+}
+*/
+.username,
+.password {
+  display: block;
+  width: 300px;
+  margin: 20px auto;
+}
+
+div#textfeild {
+    display: block;
+	margin: 0 auto;
+	width: 300px;
+}
+
+#placeholder{
+	display: block;
+	margin: 10px auto;
+}
+
+.logout {
+  display: block;
+  width: 300px;
+  height: 100px;
+  margin: 20px auto;
+}
+
+
+
+

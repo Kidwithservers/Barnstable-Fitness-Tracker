@@ -23,7 +23,7 @@
 		$('#loading_popup').modal(false);
 		$("#getPic").click(function(){
 
-		navigator.camera.getPicture(onSuccess, onFail, {quality: 50, destinationType: Camera.DestinationType.NATIVE_URI, sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY});
+		navigator.camera.getPicture(onSuccess, onFail, {quality: 50, destinationType: Camera.DestinationType.FILE_URI, sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY});
 
 function onFail(message) {
     alert('Failed because: ' + message);
@@ -147,7 +147,7 @@ $('#loading-popup').modal('hide');
     <main class="main-content" id="main-content">
 		
       <div class="mdc-top-app-bar--fixed-adjust">
-		  <img src="img/placeholder.jpg" alt="placeholder" width="300" hight="600" id="placeholder">
+		  <img src= "img/placeholder.jpg" alt="placeholder" width="300" hight="600" id="placeholder">
 		  
         <div class="mdc-text-field steps_div" id="textfeild">
 			
