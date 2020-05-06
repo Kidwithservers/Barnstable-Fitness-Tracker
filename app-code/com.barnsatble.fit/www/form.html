@@ -33,7 +33,7 @@ function onFail(message) {
 			function onSuccess(imageURI) {
 			$body = $("body");
 			var elem = document.getElementById('placeholder');
-    		elem.src = "img/success.png";
+    		elem.src = imageURI;
         $("#insert").click(function() {
 			$('#loading-popup').modal('show');
 				var name = storage.getItem('acct');
@@ -147,7 +147,7 @@ $('#loading-popup').modal('hide');
     <main class="main-content" id="main-content">
 		
       <div class="mdc-top-app-bar--fixed-adjust">
-		  <img src="img/placeholder.jpg" alt="placeholder" width="300" hight="600" id="placeholder">
+		  <img src= "img/placeholder.jpg" alt="placeholder" width="300" hight="600" id="placeholder">
 		  
         <div class="mdc-text-field steps_div" id="textfeild">
 			
