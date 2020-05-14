@@ -23,6 +23,7 @@
 		A23E480358034A129AAAC1D1 /* CDVJpegHeaderWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E779CCF183B44E6A7C68001 /* CDVJpegHeaderWriter.m */; };
 		A3DC34EDC4C446C98E5F7612 /* CDVFileTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CA7B8611524B5F963BE6E5 /* CDVFileTransfer.m */; };
 		A549B3E2C13A4D82A1FD5E93 /* CDVAssetLibraryFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCB1C33E9944467B2FFA92D /* CDVAssetLibraryFilesystem.m */; };
+		C646DDE0246866440047F68C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C646DDDF246866440047F68C /* Launch Screen.storyboard */; };
 		F95F3609252E4FAA9CF38110 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991FBA78D15347E69EBDE534 /* ImageIO.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,8 @@
 		ACDD9F9387CB4900BDCFFB49 /* CDVFile.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVFile.h; path = "cordova-plugin-file/CDVFile.h"; sourceTree = "<group>"; };
 		AFDD806ADA2E45B1A762E703 /* CoreLocation.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BDC0A5C304FB4E08BC7CA232 /* CDVJpegHeaderWriter.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVJpegHeaderWriter.h; path = "cordova-plugin-camera/CDVJpegHeaderWriter.h"; sourceTree = "<group>"; };
+		C646DDDF246866440047F68C /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "Barnstable Academy Fitness Tracker/Images.xcassets/Launch Screen.storyboard"; sourceTree = "<group>"; };
+		C646DDE2246B33E50047F68C /* Barnstable Academy Fitness Tracker.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Barnstable Academy Fitness Tracker.xctestplan"; path = "Barnstable Academy Fitness Tracker.xcodeproj/Barnstable Academy Fitness Tracker.xctestplan"; sourceTree = "<group>"; };
 		CA2D7234AB894759A47E49AA /* CDVCamera.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVCamera.h; path = "cordova-plugin-camera/CDVCamera.h"; sourceTree = "<group>"; };
 		E4CA7B8611524B5F963BE6E5 /* CDVFileTransfer.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVFileTransfer.m; path = "cordova-plugin-file-transfer/CDVFileTransfer.m"; sourceTree = "<group>"; };
 		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
@@ -130,6 +133,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				C646DDE2246B33E50047F68C /* Barnstable Academy Fitness Tracker.xctestplan */,
+				C646DDDF246866440047F68C /* Launch Screen.storyboard */,
 				EB87FDF41871DAF40020F90C /* config.xml */,
 				EB87FDF31871DA8E0020F90C /* www */,
 				EB87FDF11871DA420020F90C /* Staging */,
@@ -306,6 +311,7 @@
 			files = (
 				302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */,
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
+				C646DDE0246866440047F68C /* Launch Screen.storyboard in Resources */,
 				6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,7 +375,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1.1.0;
+				CURRENT_PROJECT_VERSION = 1.2.2;
 				DEVELOPMENT_TEAM = AQG4CA933Q;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -380,7 +386,7 @@
 				INFOPLIST_FILE = "Barnstable Academy Fitness Tracker/Barnstable Academy Fitness Tracker-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.barnsable.fit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -399,7 +405,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 1.1.0;
+				CURRENT_PROJECT_VERSION = 1.2.2;
 				DEVELOPMENT_TEAM = AQG4CA933Q;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Barnstable Academy Fitness Tracker/Barnstable Academy Fitness Tracker-Prefix.pch";
@@ -408,7 +414,7 @@
 				INFOPLIST_FILE = "Barnstable Academy Fitness Tracker/Barnstable Academy Fitness Tracker-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.barnstable.fit-track";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

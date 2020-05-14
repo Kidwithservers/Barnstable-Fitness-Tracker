@@ -3,8 +3,9 @@
 include "db.php";
 
 //get data
-$name =$_GET['name'];
-
+$namer1 =$_GET['name'];
+$namer2 = str_replace('"', '', $namer1);
+$name = stripslashes($namer2);
 //query setup and execution
 $query = $con->prepare("SELECT `steps`, `date` FROM `main_data` WHERE `name` = ? ORDER BY `date` DESC;");
 $query->bind_param("s", $name);

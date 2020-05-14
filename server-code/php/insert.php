@@ -10,20 +10,9 @@ ini_set('post_max_size', '10M');
 ini_set('max_input_time', 300);
 ini_set('max_execution_time', 300);
 
-// This function will run within each post array including multi-dimensional arrays
-function ExtendedAddslash(&$params)
-{
-        foreach ($params as &$var) {
-            // check if $var is an array. If yes, it will start another ExtendedAddslash() function to loop to each key inside.
-            is_array($var) ? ExtendedAddslash($var) : $var=addslashes($var);
-            unset($var);
-        }
-}
-
-// Initialize ExtendedAddslash() function for every $_POST variable
-ExtendedAddslash($_POST);
-
-$name =$_POST['name'];
+$namer1 =$_POST['name'];
+$namer2 = str_replace('"', '', $namer1);
+$name = stripslashes($namer2);
 $steps =$_POST['steps'];
 $date =$_POST['date'];
 echo $date;

@@ -59,6 +59,7 @@ function onFail(message) {
     console.log("Code = " + r.responseCode);
     console.log("Response = " + r.response);
     console.log("Sent = " + r.bytesSent);
+	alert("Submission Accepted");
 }
 
 var fail = function (error) {
@@ -128,7 +129,7 @@ $('#loading-popup').modal('hide');
             <span class="mdc-list-item__text">Leaderboard</span>
           </a>
 		  <a class="mdc-list-item" href="history.html">
-            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">account_circle</i>
+            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">history</i>
             <span class="mdc-list-item__text">History</span>
           </a>
           <a class="mdc-list-item" href="account.html">
