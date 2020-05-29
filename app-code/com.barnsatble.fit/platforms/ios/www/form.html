@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+	<meta name="viewport" content="width=device-width, hight=device-hight, initial-scale=1">
 	<!-- include other css files -->
 	<link rel="stylesheet" href="https://use.typekit.net/tip6mfg.css">
 	<link href="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.css" rel="stylesheet">
@@ -33,7 +34,7 @@ function onFail(message) {
 			function onSuccess(imageURI) {
 			$body = $("body");
 			var elem = document.getElementById('placeholder');
-    		elem.src = imageURI;
+    		elem.src = "img/success.png";
         $("#insert").click(function() {
 			$('#loading-popup').modal('show');
 				var name = storage.getItem('acct');
@@ -117,7 +118,7 @@ $('#loading-popup').modal('hide');
 	<title>Barnstable Academy Fitness Tracker</title>
 	</head>
 	<body>
-	<aside class="mdc-drawer mdc-drawer--dismissible">  
+	<aside class="mdc-drawer mdc-drawer--dismissible">
       <div class="mdc-drawer__content">
         <nav class="mdc-list">
           <a class="mdc-list-item mdc-list-item--activated" href="form.html" aria-selected="true">
@@ -150,12 +151,12 @@ $('#loading-popup').modal('hide');
     </header>
 
     <main class="main-content" id="main-content">
-		
+
       <div class="mdc-top-app-bar--fixed-adjust">
 		  <img src= "img/placeholder.jpg" alt="placeholder" width="300" hight="600" id="placeholder">
-		  
+
         <div class="mdc-text-field steps_div" id="textfeild">
-			
+
   <input type="number" class="mdc-text-field__input" id="steps" name="name">
   <label class="mdc-floating-label label" for="steps" id="label">Steps</label>
   <div class="mdc-line-ripple"></div>
@@ -163,7 +164,7 @@ $('#loading-popup').modal('hide');
 <div class="button-container">
 	<button class="mdc-button mdc-button" id = "getPic"><span class="mdc-button__ripple"></span>Get Picture</button>
 	<button class="mdc-button mdc-button--raised" id = "insert"><span class="mdc-button__ripple"></span>Submit</button>
-</div>	
+</div>
       </div>
     </main>
   </div>
