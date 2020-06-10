@@ -3,15 +3,18 @@
   <head>
     <!-- include files -->
       <!-- include css -->
-        <link rel="stylesheet" href="css/common.css">
-        <link rel="stylesheet" href="css/index.css">
+        <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="CSS/common.css">
+        <link rel="stylesheet" href="CSS/index.css">
 
       <!-- include JS -->
-        <script type="text/javascript" src="JS/common.js"></script>
+        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+        <script type="module" src="JS/common.js"></script>
         <script type="text/javascript" src="JS/index.js"></script>
   </head>
 
   <body>
+      <!-- app bar header -->
       <header class="mdc-top-app-bar">
         <div class="mdc-top-app-bar__row">
           <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
@@ -19,5 +22,19 @@
           </section>
         </div>
       </header>
+
+      <label class="mdc-text-field mdc-text-field--filled email">
+        <span class="mdc-text-field__ripple"></span>
+          <input type="text" class="mdc-text-field__input" aria-labelledby="email-label" name="email">
+        <span class="mdc-floating-label" id="email-label">E-Mail</span>
+        <span class="mdc-line-ripple"></span>
+      </label>
+      <label class="mdc-text-field mdc-text-field--filled password">
+        <span class="mdc-text-field__ripple"></span>
+          <input type="password" class="mdc-text-field__input" aria-labelledby="password-label" name="password">
+        <span class="mdc-floating-label" id="password-label">E-Mail</span>
+        <span class="mdc-line-ripple"></span>
+      </label>
+
   </body>
 </html>
