@@ -5,4 +5,5 @@ By: Enzo Damato
 */
 
 // Top App Bar Instantization
-mdc.topAppBar.MDCTopAppBar.attachTo(document.querySelector('.mdc-top-app-bar'));
+const topAppBarElement = document.querySelector('.mdc-top-app-bar');
+const topAppBar = new MDCTopAppBar(topAppBarElement);
