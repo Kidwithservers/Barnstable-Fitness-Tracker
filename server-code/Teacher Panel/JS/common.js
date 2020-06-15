@@ -4,6 +4,5 @@ Common JS Library
 By: Enzo Damato
 */
 
-// Top App Bar Instantization
-const topAppBarElement = document.querySelector('.mdc-top-app-bar');
-const topAppBar = new MDCTopAppBar(topAppBarElement);
+// Top App Bar
+mdc.topAppBar.MDCTopAppBar.attachTo(document.querySelector('.mdc-top-app-bar'));

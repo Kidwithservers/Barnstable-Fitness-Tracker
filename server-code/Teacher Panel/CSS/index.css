@@ -1,11 +1,12 @@
-.email,
+.textfeilds {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.username,
 .password {
   display: flex;
   margin: 20px auto;
   width: 300px;
-}
-div#textfeild {
-  display: block;
-	margin: 0 auto;
-	width: 300px;
 }

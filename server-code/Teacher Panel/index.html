@@ -11,7 +11,7 @@
       <!-- include JS -->
         <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
         <script type="module" src="JS/common.js"></script>
-        <script type="text/javascript" src="JS/index.js"></script>
+        <script type="module" src="JS/index.js"></script>
   </head>
 
   <body>
@@ -23,17 +23,18 @@
         </div>
       </header>
 
-      <div class="mdc-text-field username">
-        <input type="email" class="mdc-text-field__input" id="username-input" name="username">
-        <label class="mdc-floating-label" for="username-input">E-Mail</label>
-        <div class="mdc-line-ripple"></div>
+      <div class="textfeilds">
+        <div class="mdc-text-field username">
+          <input type="email" class="mdc-text-field__input" id="username-input" name="username">
+          <label class="mdc-floating-label" for="username-input">E-Mail</label>
+          <div class="mdc-line-ripple"></div>
+        </div>
+        <div class="mdc-text-field password">
+          <input type="password" class="mdc-text-field__input" id="password-input" name="password">
+          <label class="mdc-floating-label" for="password-input">Password</label>
+          <div class="mdc-line-ripple"></div>
+        </div>
       </div>
-      <div class="mdc-text-field password">
-        <input type="password" class="mdc-text-field__input" id="password-input" name="password">
-        <label class="mdc-floating-label" for="password-input">Password</label>
-        <div class="mdc-line-ripple"></div>
-      </div>
-
 
   </body>
 </html>

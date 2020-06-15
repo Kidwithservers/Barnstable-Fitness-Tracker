@@ -1,2 +1,2 @@
-new MDCTextField(document.querySelector('.username'));
-new MDCTextField(document.querySelector('.password'));
+mdc.textField.MDCTextField.attachTo(document.querySelector('.username'));
+mdc.textField.MDCTextField.attachTo(document.querySelector('.password'));
