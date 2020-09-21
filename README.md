@@ -2,7 +2,7 @@
 
 This is an app that I created for my school to record the number of steps completed by students during the coronavirus pandemic.
 
-##Current features
+## Current features
 * submitting steps to central server
 * viewing automatically calculated results
   * weekly and monthly
