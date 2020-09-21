@@ -1,5 +1,5 @@
-<?xml version='1.0' encoding='utf-8'?>
-<widget id="com.barnsable.fit" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<?xml version='1.2.2' encoding='utf-8'?>
+<widget id="com.barnsable.fit" version="1.2.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name short="Barnstable Fitness Tracker">Barnstable Academy Fitness Tracker</name>
     <description>
         Allows Barnstable Academy students to track their steps and share that information with students and teachers
@@ -21,6 +21,7 @@
 		<preference name="android-minSdkVersion" value="21" />
     </platform>
     <platform name="ios">
+      <preference name="EnableViewportScale" value="true" />
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <edit-config file="*-Info.plist" mode="merge" target="NSCameraUsageDescription">

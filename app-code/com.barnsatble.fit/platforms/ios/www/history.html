@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta name="viewport" content="width=device-width, hight=device-hight, initial-scale=1">
+	<!-- include other css files -->
+	<link rel="stylesheet" href="https://use.typekit.net/tip6mfg.css">
+	<link href="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/form.css">
+	<link href="css/readjson.css" rel="stylesheet">
+	<!-- include other JS files -->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="cordova.js"></script>
+	<!-- MDC JS -->
+	<script type="module">
+	const list = mdc.list.MDCList.attachTo(document.querySelector('.mdc-list'));
+	list.wrapFocus = true;
+	const drawer = mdc.drawer.MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
+	const topAppBar = mdc.topAppBar.MDCTopAppBar.attachTo(document.getElementById('app-bar'));
+	topAppBar.setScrollTarget(document.getElementById('main-content'));
+	topAppBar.listen('MDCTopAppBar:nav', () => {
+  	drawer.open = !drawer.open;
+});
+	// const MDCTextField = mdc.textfield.MDCTextField.attachTo(document.querySelector('.username'));
+	</script>
+	<script>
+    function CreateTableFromJSON() {
+        //get data
+        var url="https://fit-track.octs.tech/phonegap/database/history.php";
+		var callName=localStorage.getItem("acct");
+		console.log(callName);
+        $.getJSON(url, {name: callName}, function(data){
+        console.log(data);
+        // EXTRACT VALUE FOR HTML HEADER.
+        // ('Book ID', 'Book Name', 'Category' and 'Price')
+        var col = [];
+        for (var i = 0; i < data.length; i++) {
+            for (var key in data[i]) {
+                if (col.indexOf(key) === -1) {
+                    col.push(key);
+                }
+            }
+        }
+
+        // CREATE DYNAMIC TABLE.
+        var table = document.createElement("table");
+			table.setAttribute("id", "results-table");
+
+        // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
+
+        var tr = table.insertRow(-1);                   // TABLE ROW.
+
+        for (var i = 0; i < col.length; i++) {
+            var th = document.createElement("th");      // TABLE HEADER.
+			th.setAttribute("class", "tableHeading");
+            th.innerHTML = col[i];
+            tr.appendChild(th);
+        }
+
+        // ADD JSON DATA TO THE TABLE AS ROWS.
+        for (var i = 0; i < data.length; i++) {
+
+            tr = table.insertRow(-1);
+
+            for (var j = 0; j < col.length; j++) {
+                var tabCell = tr.insertCell(-1);
+				tabCell.setAttribute("class", "tableRow");
+                tabCell.innerHTML = data[i][col[j]];
+            }
+        }
+
+        // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+        var divContainer = document.getElementById("showData");
+        divContainer.innerHTML = "";
+        divContainer.appendChild(table);
+    }
+)}
+</script>
+	<title>Barnstable Academy Fitness Tracker</title>
+	</head>
+	<body onLoad="CreateTableFromJSON()">
+	<aside class="mdc-drawer mdc-drawer--dismissible">  
+      <div class="mdc-drawer__content">
+        <nav class="mdc-list">
+          <a class="mdc-list-item" href="form.html" aria-selected="true">
+            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">post_add</i>
+            <span class="mdc-list-item__text">Submit Steps</span>
+          </a>
+          <a class="mdc-list-item" href="readjson.html">
+            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">format_list_numbered</i>
+            <span class="mdc-list-item__text">Leaderboard</span>
+          </a>
+          <a class="mdc-list-item mdc-list-item--activated" href="history.html">
+            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">history</i>
+            <span class="mdc-list-item__text">History</span>
+          </a>
+          <a class="mdc-list-item" href="account.html">
+            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">account_circle</i>
+            <span class="mdc-list-item__text">Account</span>
+          </a>
+        </nav>
+      </div>
+    </aside>
+    <div class="mdc-drawer-app-content">
+    <header class="mdc-top-app-bar app-bar" id="app-bar">
+      <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+          <a href="#" class="demo-menu material-icons mdc-top-app-bar__navigation-icon">menu</a>
+          <span class="mdc-top-app-bar__title">Barnstable Fitness Tracker</span>
+        </section>
+      </div>
+    </header>
+
+    <main class="main-content" id="main-content">
+	
+	<div class="mdc-top-app-bar--fixed-adjust">
+	<div id="winers-table" align="center" class="mdc-card">
+		<div align="center">
+		<h2 id="results-heading">Personal History</h2>
+    	<p id="showData">You havent submitted any steps yet.</p>
+		</div>
+	</div>
+</div>		
+	</main>
+		</div>
+	</body>
+</html>

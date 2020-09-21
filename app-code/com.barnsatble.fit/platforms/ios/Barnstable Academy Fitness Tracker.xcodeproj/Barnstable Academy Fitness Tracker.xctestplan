@@ -1,0 +1,23 @@
+{
+  "configurations" : [
+    {
+      "id" : "F17E5378-7F72-430B-AEBC-FE9595F6092B",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Barnstable Academy Fitness Tracker.xcodeproj",
+      "identifier" : "1D6058900D05DD3D006BFB54",
+      "name" : "Barnstable Academy Fitness Tracker"
+    }
+  },
+  "testTargets" : [
+
+  ],
+  "version" : 1
+}

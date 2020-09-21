@@ -1,5 +1,47 @@
 @charset "utf-8";
-#winers-table {
+th, td, p, input {
+         font:14px Verdana;
+     }
+     table, th, td
+     {
+         border: solid 1px #DDD;
+         border-collapse: collapse;
+         padding: 2px 3px;
+         text-align: center;
+     }
+* {
+margin: 0;
+/** Possibly padding too **/
+padding: 0;
 }
-#showData {
+ #winers-table {
+color: #000000;
+padding-top: 1.5%;
+}
+#winers-table-week {
+ color: #000000;
+ padding-top: 1.5%;
+}
+ #results-heading-week {
+ font-size: 141%;
+ text-align: center;
+}
+ .tableHeading {
+ background-color: #DB883D;
+ border-color: #000000;
+ border-width: medium;
+ }
+.tableRow {
+ background-color: #FFFFFF;
+ border-color: #000000;
+ border-width: ;
+ border-width: medium;
+ }
+ #results-heading {
+font-size: 141%;
+text-align: center;
+padding-bottom: 0px;
+}
+#winers-table{
+margin-bottom: 1.5%
 }
