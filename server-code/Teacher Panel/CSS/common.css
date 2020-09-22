@@ -3,11 +3,10 @@ Barnstable Academy Fitness Tracker Teacher control Panel
 Common CSS Library
 By: Enzo Damato
 */
-.mdc-top-app-bar {
-  position: absolute;
-  display: block;
+.body {
+  height: 100vh;
+  width: 100vw;
 }
-body {
-  height: 100%;
-  width: 100%;
+.title-flex {
+  
 }

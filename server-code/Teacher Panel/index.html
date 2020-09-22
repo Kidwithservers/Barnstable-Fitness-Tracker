@@ -3,38 +3,36 @@
   <head>
     <!-- include files -->
       <!-- include css -->
-        <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="CSS/common.css">
         <link rel="stylesheet" href="CSS/index.css">
 
       <!-- include JS -->
-        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
         <script type="module" src="JS/common.js"></script>
         <script type="module" src="JS/index.js"></script>
+        <script type="module" src="JS/jquery.js"></script>
   </head>
 
-  <body>
-      <header class="mdc-top-app-bar">
-        <div class="mdc-top-app-bar__row">
-          <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-            <span class="mdc-top-app-bar__title">Barnstable Academy Fitness Tracker: Teacher Control Panel</span>
-          </section>
-        </div>
-      </header>
-
-      <div class="textfeilds">
-        <div class="mdc-text-field username">
-          <input type="email" class="mdc-text-field__input" id="username-input" name="username">
-          <label class="mdc-floating-label" for="username-input">E-Mail</label>
-          <div class="mdc-line-ripple"></div>
-        </div>
-        <div class="mdc-text-field password">
-          <input type="password" class="mdc-text-field__input" id="password-input" name="password">
-          <label class="mdc-floating-label" for="password-input">Password</label>
-          <div class="mdc-line-ripple"></div>
-        </div>
+  <body class="body">
+    <div class="main-flex">
+<!------------------------------------------------------------------------------>
+      <div class="title-flex">
+        <h1 class="title-text">Barnstable Academy Fitness Tracker: Teacher Contorl Panel</h1>
       </div>
-
+<!------------------------------------------------------------------------------>
+    </div>
   </body>
 </html>
+
+
+<!--<div class="textfeilds">
+  <div class="mdc-text-field username">
+    <input type="email" class="mdc-text-field__input" id="username-input" name="username">
+    <label class="mdc-floating-label" for="username-input">E-Mail</label>
+    <div class="mdc-line-ripple"></div>
+  </div>
+  <div class="mdc-text-field password">
+    <input type="password" class="mdc-text-field__input" id="password-input" name="password">
+    <label class="mdc-floating-label" for="password-input">Password</label>
+    <div class="mdc-line-ripple"></div>
+  </div>
+</div>-->
