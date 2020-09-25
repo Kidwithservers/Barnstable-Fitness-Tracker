@@ -5,6 +5,7 @@ body {
 
 .main-flex {
   display: flex;
+  flex-wrap: wrap;
   height: 100vh;
   width: 100vw;
 }
@@ -23,4 +24,41 @@ body {
   color: white;
   font-size: 2vh;
   margin-left: 3vw;
+}
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20vh;
+  width: 100vw;
+}
+.form {
+  font-family: roboto, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  width: 25vw;
+  border: 0;
+  border-bottom: 2px solid grey;
+  outline: 0;
+  font-size: 1.3rem;
+  padding: 7px 0;
+  background: transparent;
+  transition: orange 0.2s;
+}
+.form:focus {
+  font-family: roboto, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  caret-color: orange;
+  width: 25vw;
+  border: 0;
+  border-bottom: 2px solid orange;
+  outline: 0;
+  font-size: 1.3rem;
+  padding: 7px 0;
+  background: transparent;
+  transition: orange 0.2s;
+  }
+.form:focus::placeholder {
+  color: orange;
 }
